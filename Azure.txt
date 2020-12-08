@@ -1,0 +1,20 @@
+Configuring Azure Pipelines. This might take several minutes...
+
+Creating Azure DevOps project EADCA3 on X001446310902..............done
+
+Creating Azure resources: 
+  Creating Resource Group EADCA3-dev-rg.............done
+  Creating App Service Plan EADCA3-dev-asp..........done
+  Creating App Service EADCA3-dev-as........................done
+
+Creating Azure Pipelines.............................................................done
+
+The build pipeline setup for Azure DevOps Project EADCA3 completed successfully. Builds are now automatically generated and deployed to App Service EADCA3-dev-as upon code updates.
+Details:
+  Azure Resource Group: https://ms.portal.azure.com/#resource/subscriptions/2e5c630f-65f6-4728-b5d6-c91d7bfff26d/resourceGroups/EADCA3-dev-rg/overview
+  Azure App Service: http://EADCA3-dev-as.azurewebsites.net
+  Azure DevOps Project: EADCA3 (https://dev.azure.com/X001446310902/EADCA3)
+  Azure DevOps build pipeline: https://dev.azure.com/X001446310902/681a3c7d-067c-4e43-9c21-2fa1ef8d1dac/_build/definition?definitionId=3
+  Azure DevOps release pipeline: https://dev.azure.com/X001446310902/681a3c7d-067c-4e43-9c21-2fa1ef8d1dac/_release?definitionId=1
+
+
