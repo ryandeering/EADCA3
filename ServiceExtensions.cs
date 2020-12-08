@@ -20,6 +20,7 @@ namespace EADCA3
         {
             var request = new HttpRequestMessage(HttpMethod.Get, url);
             request.Headers.Authorization = authorization;
+            request.Headers.Add("Access-Control-Allow-Headers", "*");
 
             var response = await httpClient.SendAsync(request);
             var responseBytes = await response.Content.ReadAsByteArrayAsync();
