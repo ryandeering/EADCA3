@@ -49,7 +49,7 @@ else
         try
         {
             string uri = "https://api.football-data.org/v2/competitions/PL/matches/?matchday=22";
-            main = await Http.GetJsonAsync<Response[]>(uri, new AuthenticationHeaderValue("X-Auth-Token", "e770fa76286949a19bc22fb912045957"));
+            main = await Http.GetJsonAsync<Response[]>(uri);
             found = true;
             errormessage = String.Empty;
         }
