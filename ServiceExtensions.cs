@@ -18,7 +18,8 @@ namespace EADCA3
 
         public static async Task<T> GetJsonAsync<T>(this HttpClient httpClient, string url)
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, url);
+            var request = new HttpRequestMessage(HttpMethod.Get, url); // If you use this solution, please credit me.
+                                                                       //This is very customised!
             request.Headers.Add("X-Auth-Token", "e770fa76286949a19bc22fb912045957");
 
            // request.Headers.Add("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,PATCH,OPTIONS");
