@@ -3,57 +3,53 @@
 
 @if (main == null)
 {
-    <p><em>Loading...</em></p>
+    <p><em>Loading...hmm</em></p>
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Position</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var row in main)
+<table class="table">
+    <thead>
+        <tr>
+            <th>Position</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @for (int i = 0; i < main.standings.Count; i++)
+        {
+            @for (int j = 0; j < main.standings[i].table.Count; j++)
             {
-                <tr>
-                    <td>@main</td>
-                </tr>
+        <tr>
+            <td>@main.standings[i].table[j].position</td>
+            <td>@main.standings[i].table[j].team.name</td>
+            <td>@main.standings[i].table[j].points</td>
+        </tr>
             }
-        </tbody>
-    </table>
+        }
+
+
+    </tbody>
+</table>
+
 }
 
 @code {
-    private Response[] main;
-
-    public const string APIKey = "e770fa76286949a19bc22fb912045957"; // the amount of effort to make an API key not visible in Blazor Webassembly is insane... Not doing that.
-
+    private Root main;
     private Boolean found;
+    private int count = 0;
     private string errormessage;
-
-
-
-
-    HttpRequestMessage request = new HttpRequestMessage
-    {
-        Headers =
-{
-        { "X-Auth-Token", "e770fa76286949a19bc22fb912045957" }
-    },
-    };
-
 
     private async Task GetDataAsync()
     {
         try
         {
-            string uri = "https://api.football-data.org/v2/competitions/PL/matches/?matchday=22";
-            main = await Http.GetJsonAsync<Response[]>(uri);
+            string uri = "https://api.football-data.org/v2/competitions/2021/standings?standingType=TOTAL";
+            main = await Http.GetJsonAsync<Root>(uri);
             found = true;
             errormessage = String.Empty;
         }
-        catch (Exception e){
+        catch (Exception e)
+        {
 
             found = false;
             errormessage = e.Message;
@@ -72,76 +68,74 @@ else
     }
 
 
-    public class Response
+    public class Filters
     {
-        public class Filters
-        {
-        }
-
-        public class Area
-        {
-            public int id { get; set; }
-            public string name { get; set; }
-        }
-
-        public class Competition
-        {
-            public int id { get; set; }
-            public Area area { get; set; }
-            public string name { get; set; }
-            public string code { get; set; }
-            public string plan { get; set; }
-            public DateTime lastUpdated { get; set; }
-        }
-
-        public class Season
-        {
-            public int id { get; set; }
-            public string startDate { get; set; }
-            public string endDate { get; set; }
-            public int currentMatchday { get; set; }
-            public object winner { get; set; }
-        }
-
-        public class Team
-        {
-            public int id { get; set; }
-            public string name { get; set; }
-            public string crestUrl { get; set; }
-        }
-
-        public class Table
-        {
-            public int position { get; set; }
-            public Team team { get; set; }
-            public int playedGames { get; set; }
-            public string form { get; set; }
-            public int won { get; set; }
-            public int draw { get; set; }
-            public int lost { get; set; }
-            public int points { get; set; }
-            public int goalsFor { get; set; }
-            public int goalsAgainst { get; set; }
-            public int goalDifference { get; set; }
-        }
-
-        public class Standing
-        {
-            public string stage { get; set; }
-            public string type { get; set; }
-            public object group { get; set; }
-            public List<Table> table { get; set; }
-        }
-
-        public class Root
-        {
-            public Filters filters { get; set; }
-            public Competition competition { get; set; }
-            public Season season { get; set; }
-            public List<Standing> standings { get; set; }
-        }
-
-
     }
+
+    public class Area
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+    }
+
+    public class Competition
+    {
+        public int id { get; set; }
+        public Area area { get; set; }
+        public string name { get; set; }
+        public string code { get; set; }
+        public string plan { get; set; }
+        public DateTime lastUpdated { get; set; }
+    }
+
+    public class Season
+    {
+        public int id { get; set; }
+        public string startDate { get; set; }
+        public string endDate { get; set; }
+        public int currentMatchday { get; set; }
+        public object winner { get; set; }
+    }
+
+    public class Team
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        public string crestUrl { get; set; }
+    }
+
+    public class Table
+    {
+        public int position { get; set; }
+        public Team team { get; set; }
+        public int playedGames { get; set; }
+        public string form { get; set; }
+        public int won { get; set; }
+        public int draw { get; set; }
+        public int lost { get; set; }
+        public int points { get; set; }
+        public int goalsFor { get; set; }
+        public int goalsAgainst { get; set; }
+        public int goalDifference { get; set; }
+    }
+
+    public class Standing
+    {
+        public string stage { get; set; }
+        public string type { get; set; }
+        public object group { get; set; }
+        public List<Table> table { get; set; }
+    }
+
+    public class Root
+    {
+        public Filters filters { get; set; }
+        public Competition competition { get; set; }
+        public Season season { get; set; }
+        public List<Standing> standings { get; set; }
+    }
+
+
+}
 
 }
