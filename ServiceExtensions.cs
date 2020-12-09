@@ -18,8 +18,7 @@ namespace EADCA3
 
         public static async Task<T> GetJsonAsync<T>(this HttpClient httpClient, string url)
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, url); // If you use this solution, please credit me.
-                                                                       //This is very customised!
+            var request = new HttpRequestMessage(HttpMethod.Get, url);
             request.Headers.Add("X-Auth-Token", "e770fa76286949a19bc22fb912045957");
 
            // request.Headers.Add("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,PATCH,OPTIONS");
@@ -28,12 +27,16 @@ namespace EADCA3
 
 
             var response = await httpClient.SendAsync(request);
-
-            // response.Headers.Add("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,PATCH,OPTIONS");
-            // response.Headers.Add("Access-Control-Allow-Credentials", "true");
             response.Headers.Add("Access-Control-Allow-Origin", "*");
             response.Headers.Add("X-Auth-Token", "e770fa76286949a19bc22fb912045957");
+            response.EnsureSuccessStatusCode();
+            string responseBody = await response.Content.ReadAsStringAsync();
+
+
             var responseBytes = await response.Content.ReadAsByteArrayAsync();
+            var deserializedResponse = JsonSerializer.Deserialize<T>(responseBytes);
+
+
             // return JsonSerializer.Deserialize<T>(responseBytes, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
             return JsonSerializer.Deserialize<T>(responseBytes, new JsonSerializerOptions { });
         }
