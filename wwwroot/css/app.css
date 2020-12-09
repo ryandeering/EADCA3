@@ -4,6 +4,13 @@ html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+.resize {
+    width: 400px;
+    height: auto;
+}
+
+
+
 a, .btn-link {
     color: #0366d6;
 }
