@@ -1,7 +1,72 @@
 ﻿@page "/"
+@inject HttpClient Http
 
-<h1>Hello, world!</h1>
+@if (main == null)
+{
+    
+    <environment include="Staging,Production">
+    <p>Calling the API has run into a problem.</p>
+    <p>A reminder that the API can only make 10 requests per minute.</p>
+    </environment>
 
-Welcome to your new app.
+    <environment include="Development">
+        <p>Error: @errormessage </p>
+        
+    </environment>
+}
+else
+{
+    <div class="mb-2 p-3">
+        <select class="form-control" @bind="League" @onclick="@GetDataAsync">
+            <option selected disabled value="-1"> Choose a Football League!</option>
+            <option value=2021> English Premier League</option>
+            <option value=2002> German Bundesliga</option>
+            <option value=PD> Spanish La Liga</option>
+            <option value=SA> Italian Serie A</option>
+            <option value=FL1> French Ligue 1</option>
+        </select>
+    </div>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Position</th>
+                <th>Club</th>
+                <th>Played</th>
+                <th>Won</th>
+                <th>Drawn</th>
+                <th>Lost</th>
+                <th>GF</th>
+                <th>GA</th>
+                <th>GD</th>
+                <th>Points</th>
+                <th>Form</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (int i = 0; i < main.standings.Count; i++)
+            {
+                @for (int j = 0; j < main.standings[i].table.Count; j++)
+                {
+                    <tr>
+                        <td>@main.standings[i].table[j].position</td>
+                        <td> <img class="resize" src=@main.standings[i].table[j].team.crestUrl style="width:2.3em; height:3em;"> &#8203; @main.standings[i].table[j].team.name</td>
+                        <td>@main.standings[i].table[j].playedGames</td>
+                        <td>@main.standings[i].table[j].won</td>
+                        <td>@main.standings[i].table[j].draw</td>
+                        <td>@main.standings[i].table[j].lost</td>
+                        <td>@main.standings[i].table[j].goalsFor</td>
+                        <td>@main.standings[i].table[j].goalsAgainst</td>
+                        <td>@main.standings[i].table[j].goalDifference</td>
+                        <td>@main.standings[i].table[j].points</td>
+                        <td>@main.standings[i].table[j].form</td>
+                    </tr>
+                }
+            }
+
+
+        </tbody>
+    </table>
+
+}
