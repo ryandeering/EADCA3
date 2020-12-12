@@ -1,0 +1,58 @@
+﻿@page "/matchestoday"
+@inject HttpClient Http
+
+@if (Main == null)
+{
+
+    <p>Calling the API has run into a problem.</p>
+    <p>A reminder that the API can only make 10 requests per minute.</p>
+
+
+}
+else
+{
+    <div class="mb-2 p-3">
+        Choose a country's domestic league you'd like to see the results for:
+        <select class="form-control" @bind="League" @onclick="@GetDataAsync">
+            <option selected disabled value="-1"> Choose a Football League!</option>
+            <option value=PL> English Premier League</option>
+            <option value=BL1> German Bundesliga</option>
+            <option value=PD> Spanish La Liga</option>
+            <option value=SA> Italian Serie A</option>
+            <option value=FL1> French Ligue 1</option>
+        </select>
+    </div>
+
+    <div class="mb-2 p-3">
+        Input the date for the match results you want to see:
+        <input type="date" value="@Date.ToString(dateFormatString)"
+               format-value="@dateFormatString" @onchange="OnDateChanged" />
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Status</th>
+                <th>Home</th>
+                <th>Score</th>
+                <th>Away</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var match in Main.matches)
+            {
+                <tr>
+                    <td>@match.utcDate.TimeOfDay</td>
+                    <td>@match.status</td>
+                    <td>@match.homeTeam.name </td>
+                    <td>@match.score.fullTime.homeTeam - @match.score.fullTime.awayTeam</td>
+                    <td>@match.awayTeam.name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+
