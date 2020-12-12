@@ -18,6 +18,7 @@
 else
 {
     <div class="mb-2 p-3">
+        Choose a country's domestic league you'd like to see the results for:
         <select class="form-control" @bind="League" @onclick="@GetDataAsync">
             <option selected disabled value="-1"> Choose a Football League!</option>
             <option value=PL> English Premier League</option>
@@ -29,6 +30,7 @@ else
     </div>
 
     <div class="mb-2 p-3">
+        Input the date for the match results you want to see:
         <input type="date" value="@Date.ToString(dateFormatString)"
                format-value="@dateFormatString" @onchange="OnDateChanged" />
     </div>
