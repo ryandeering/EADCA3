@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 
@@ -10,26 +8,21 @@ namespace EADCA3.Pages
 {
     public partial class Index : ComponentBase
     {
-        private Root main;
-        private Boolean found;
-        private int count;
-        private string errormessage;
-        private string League = "2021";
+        private Root Main;
+        private string ErrorMessage;
+        private string League = "PL";
 
         private async Task GetDataAsync()
         {
             try
             {
                 string uri = "https://api.football-data.org/v2/competitions/" + League + "/standings?standingType=TOTAL";
-                main = await Http.GetJsonAsync<Root>(uri);
-                found = true;
-                errormessage = String.Empty;
-                main = null;
+                Main = await Http.GetJsonAsync<Root>(uri);
+                ErrorMessage = String.Empty;
             }
             catch (Exception e)
             {
-                found = false;
-                errormessage = e.Message;
+                ErrorMessage = e.Message;
             }
         }
 
@@ -40,8 +33,12 @@ namespace EADCA3.Pages
         }
 
 
-        public class Filters
+        public class Root
         {
+            public Filters filters { get; set; }
+            public Competition competition { get; set; }
+            public Season season { get; set; }
+            public List<Standing> standings { get; set; }
         }
 
         public class Area
@@ -99,13 +96,10 @@ namespace EADCA3.Pages
             public List<Table> table { get; set; }
         }
 
-        public class Root
+        public class Filters
         {
-            public Filters filters { get; set; }
-            public Competition competition { get; set; }
-            public Season season { get; set; }
-            public List<Standing> standings { get; set; }
         }
+
 
     }
 }

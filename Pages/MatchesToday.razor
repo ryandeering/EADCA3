@@ -1,0 +1,64 @@
+﻿@page "/matchestoday"
+@inject HttpClient Http
+@inject IWebAssemblyHostEnvironment hostEnv
+
+@if (Main == null)
+{
+    @if (hostEnv.IsDevelopment())
+    {
+        <p>Error: @ErrorMessage </p>
+        <p>Have you set the parameters necessary in launchSettings.json?</p>
+    }
+    else
+    {
+        <p>Calling the API has run into a problem.</p>
+        <p>A reminder that the API can only make 10 requests per minute.</p>
+    }
+
+}
+else
+{
+    <div class="mb-2 p-3">
+        <select class="form-control" @bind="League" @onclick="@GetDataAsync">
+            <option selected disabled value="-1"> Choose a Football League!</option>
+            <option value=PL> English Premier League</option>
+            <option value=BL1> German Bundesliga</option>
+            <option value=PD> Spanish La Liga</option>
+            <option value=SA> Italian Serie A</option>
+            <option value=FL1> French Ligue 1</option>
+        </select>
+    </div>
+
+    <div class="mb-2 p-3">
+        <label for="Date" class="col-sm-3">Created Date:</label>
+        <EditForm Model=Date OnSubmit="@GetDataAsync">
+            <InputDateTime id="Date" class="form-control col-sm-8" @bind-Value="Date"></InputDateTime>
+            <ValidationMessage class="offset-sm-3 col-sm-8" For="(()=>Date)"></ValidationMessage>
+        </EditForm>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Home</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (int i = 0; i < Main.matches.Count; i++)
+            { 
+            <tr>
+                <td>@Main.matches[i].homeTeam.name @Main.matches[i].score.fullTime.homeTeam</td>
+                <td>@Main.matches[i].utcDate.TimeOfDay GMT </td>
+                <td>@Main.matches[i].awayTeam.name @Main.matches[i].score.fullTime.awayTeam</td>
+            </tr>
+                }
+            }
+
+
+        </tbody>
+    </table>
+
+}
+}

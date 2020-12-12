@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EADCA3", "EADCA3.csproj", "{85BC3BA1-A6DB-4A78-AC50-7C8D08A5AB41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EADCA3", "EADCA3.csproj", "{85BC3BA1-A6DB-4A78-AC50-7C8D08A5AB41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

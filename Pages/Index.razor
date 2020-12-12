@@ -1,26 +1,30 @@
 ﻿@page "/"
 @inject HttpClient Http
+@inject IWebAssemblyHostEnvironment hostEnv
 
-@if (main == null)
+
+@if (Main == null)
 {
-    
-    <environment include="Staging,Production">
-    <p>Calling the API has run into a problem.</p>
-    <p>A reminder that the API can only make 10 requests per minute.</p>
-    </environment>
 
-    <environment include="Development">
-        <p>Error: @errormessage </p>
-        
-    </environment>
+    @if (hostEnv.IsDevelopment())
+    {
+        <p>Error: @ErrorMessage </p>
+        <p>Have you set the parameters necessary in launchSettings.json?</p>
+    }
+    else
+    {
+        <p>Calling the API has run into a problem.</p>
+        <p>A reminder that the API can only make 10 requests per minute.</p>
+    }
+
 }
 else
 {
     <div class="mb-2 p-3">
         <select class="form-control" @bind="League" @onclick="@GetDataAsync">
             <option selected disabled value="-1"> Choose a Football League!</option>
-            <option value=2021> English Premier League</option>
-            <option value=2002> German Bundesliga</option>
+            <option value=PL> English Premier League</option>
+            <option value=BL1> German Bundesliga</option>
             <option value=PD> Spanish La Liga</option>
             <option value=SA> Italian Serie A</option>
             <option value=FL1> French Ligue 1</option>
@@ -45,22 +49,22 @@ else
         </thead>
         <tbody>
 
-            @for (int i = 0; i < main.standings.Count; i++)
+            @for (int i = 0; i < Main.standings.Count; i++)
             {
-                @for (int j = 0; j < main.standings[i].table.Count; j++)
+                @for (int j = 0; j < Main.standings[i].table.Count; j++)
                 {
                     <tr>
-                        <td>@main.standings[i].table[j].position</td>
-                        <td> <img class="resize" src=@main.standings[i].table[j].team.crestUrl style="width:2.3em; height:3em;"> &#8203; @main.standings[i].table[j].team.name</td>
-                        <td>@main.standings[i].table[j].playedGames</td>
-                        <td>@main.standings[i].table[j].won</td>
-                        <td>@main.standings[i].table[j].draw</td>
-                        <td>@main.standings[i].table[j].lost</td>
-                        <td>@main.standings[i].table[j].goalsFor</td>
-                        <td>@main.standings[i].table[j].goalsAgainst</td>
-                        <td>@main.standings[i].table[j].goalDifference</td>
-                        <td>@main.standings[i].table[j].points</td>
-                        <td>@main.standings[i].table[j].form</td>
+                        <td>@Main.standings[i].table[j].position</td>
+                        <td> <img src=@Main.standings[i].table[j].team.crestUrl style="width:2.3em; height:3em;"> &#8203; @Main.standings[i].table[j].team.name</td>
+                        <td>@Main.standings[i].table[j].playedGames</td>
+                        <td>@Main.standings[i].table[j].won</td>
+                        <td>@Main.standings[i].table[j].draw</td>
+                        <td>@Main.standings[i].table[j].lost</td>
+                        <td>@Main.standings[i].table[j].goalsFor</td>
+                        <td>@Main.standings[i].table[j].goalsAgainst</td>
+                        <td>@Main.standings[i].table[j].goalDifference</td>
+                        <td>@Main.standings[i].table[j].points</td>
+                        <td>@Main.standings[i].table[j].form</td>
                     </tr>
                 }
             }

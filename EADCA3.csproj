@@ -3,6 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
+    <PackageProjectUrl>https://github.com/ryandeering/EADCA3</PackageProjectUrl>
+    <Authors>Ryan Deering</Authors>
+    <Product>Enterprise Application Development CA3</Product>
   </PropertyGroup>
 
   <ItemGroup>
