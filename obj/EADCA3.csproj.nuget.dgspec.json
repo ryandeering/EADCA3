@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ryan3\\source\\repos\\EADCA3\\EADCA3.csproj": {}
+    "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\EADCA3\\EADCA3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ryan3\\source\\repos\\EADCA3\\EADCA3.csproj": {
+    "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\EADCA3\\EADCA3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ryan3\\source\\repos\\EADCA3\\EADCA3.csproj",
+        "projectUniqueName": "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\EADCA3\\EADCA3.csproj",
         "projectName": "EADCA3",
-        "projectPath": "C:\\Users\\Ryan3\\source\\repos\\EADCA3\\EADCA3.csproj",
+        "projectPath": "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\EADCA3\\EADCA3.csproj",
         "packagesPath": "C:\\Users\\Ryan3\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ryan3\\source\\repos\\EADCA3\\obj\\",
+        "outputPath": "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\EADCA3\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
