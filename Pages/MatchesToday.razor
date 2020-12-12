@@ -40,8 +40,11 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th>Home</th>
                 <th>Time</th>
+                <th>Status</th>
+                <th>Home</th>
+                <th>Score</th>
+                <th>Away</th>
             </tr>
         </thead>
         <tbody>
@@ -49,9 +52,11 @@ else
             @for (int i = 0; i < Main.matches.Count; i++)
             { 
             <tr>
-                <td>@Main.matches[i].homeTeam.name @Main.matches[i].score.fullTime.homeTeam</td>
-                <td>@Main.matches[i].utcDate.TimeOfDay GMT </td>
-                <td>@Main.matches[i].awayTeam.name @Main.matches[i].score.fullTime.awayTeam</td>
+                <td>@Main.matches[i].utcDate.TimeOfDay</td>
+                <td>@Main.matches[i].status</td>
+                <td>@Main.matches[i].homeTeam.name </td>
+                <td>@Main.matches[i].score.fullTime.homeTeam - @Main.matches[i].score.fullTime.awayTeam</td>
+                <td>@Main.matches[i].awayTeam.name</td>
             </tr>
                 }
             }
