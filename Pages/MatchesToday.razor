@@ -29,8 +29,8 @@ else
     </div>
 
     <div class="mb-2 p-3">
-        <label for="Date" class="col-sm-3">Created Date:</label>
-        <EditForm Model=Date OnSubmit="@GetDataAsync">
+        <label for="Date" class="col-sm-6">Created Date:</label>
+        <EditForm Model=Date>
             <InputDateTime id="Date" class="form-control col-sm-8" @bind-Value="Date"></InputDateTime>
             <ValidationMessage class="offset-sm-3 col-sm-8" For="(()=>Date)"></ValidationMessage>
         </EditForm>
