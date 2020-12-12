@@ -7905,11 +7905,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\EADCA3\\CA3Tests\\CA3Tests.csproj",
+      "projectUniqueName": "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\eadca3v3\\EADCA3\\CA3Tests\\CA3Tests.csproj",
       "projectName": "CA3Tests",
-      "projectPath": "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\EADCA3\\CA3Tests\\CA3Tests.csproj",
+      "projectPath": "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\eadca3v3\\EADCA3\\CA3Tests\\CA3Tests.csproj",
       "packagesPath": "C:\\Users\\Ryan3\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\EADCA3\\CA3Tests\\obj\\",
+      "outputPath": "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\eadca3v3\\EADCA3\\CA3Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7929,8 +7929,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\EADCA3\\EADCA3\\EADCA3.csproj": {
-              "projectPath": "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\EADCA3\\EADCA3\\EADCA3.csproj"
+            "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\eadca3v3\\EADCA3\\EADCA3\\EADCA3.csproj": {
+              "projectPath": "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\eadca3v3\\EADCA3\\EADCA3\\EADCA3.csproj"
             }
           }
         }
