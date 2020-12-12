@@ -49,14 +49,14 @@ else
         </thead>
         <tbody>
 
-            @for (int i = 0; i < Main.matches.Count; i++)
+            @foreach (var match in Main.matches)
             { 
             <tr>
-                <td>@Main.matches[i].utcDate.TimeOfDay</td>
-                <td>@Main.matches[i].status</td>
-                <td>@Main.matches[i].homeTeam.name </td>
-                <td>@Main.matches[i].score.fullTime.homeTeam - @Main.matches[i].score.fullTime.awayTeam</td>
-                <td>@Main.matches[i].awayTeam.name</td>
+                <td>@match.utcDate.TimeOfDay</td>
+                <td>@match.status</td>
+                <td>@match.homeTeam.name </td>
+                <td>@match.score.fullTime.homeTeam - @match.score.fullTime.awayTeam</td>
+                <td>@match.awayTeam.name</td>
             </tr>
                 }
             }

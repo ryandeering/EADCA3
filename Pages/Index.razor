@@ -49,22 +49,24 @@ else
         </thead>
         <tbody>
 
-            @for (int i = 0; i < Main.standings.Count; i++)
+            @foreach (var standing in Main.standings)
             {
-                @for (int j = 0; j < Main.standings[i].table.Count; j++)
+                @foreach (var row in standing.table)
                 {
                     <tr>
-                        <td>@Main.standings[i].table[j].position</td>
-                        <td> <img src=@Main.standings[i].table[j].team.crestUrl style="width:2.3em; height:3em;"> &#8203; @Main.standings[i].table[j].team.name</td>
-                        <td>@Main.standings[i].table[j].playedGames</td>
-                        <td>@Main.standings[i].table[j].won</td>
-                        <td>@Main.standings[i].table[j].draw</td>
-                        <td>@Main.standings[i].table[j].lost</td>
-                        <td>@Main.standings[i].table[j].goalsFor</td>
-                        <td>@Main.standings[i].table[j].goalsAgainst</td>
-                        <td>@Main.standings[i].table[j].goalDifference</td>
-                        <td>@Main.standings[i].table[j].points</td>
-                        <td>@Main.standings[i].table[j].form</td>
+                        <td>@row.position</td>
+                        <td>
+                            <img src=@row.team.crestUrl style="width:2.3em; height:3em;"> &#8203; @row.team.name
+                        </td>
+                        <td>@row.playedGames</td>
+                        <td>@row.won</td>
+                        <td>@row.draw</td>
+                        <td>@row.lost</td>
+                        <td>@row.goalsFor</td>
+                        <td>@row.goalsAgainst</td>
+                        <td>@row.goalDifference</td>
+                        <td>@row.points</td>
+                        <td>@row.form</td>
                     </tr>
                 }
             }
