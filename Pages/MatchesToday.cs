@@ -12,7 +12,9 @@ namespace EADCA3.Pages
         private DateTime Date = DateTime.Now;
         private string ErrorMessage;
         private string League = "PL";
-        public EventCallback<DateTime> DateValueChanged{ get; set; }
+        private string dateFormatString = "yyyy-MM-dd";
+        [Parameter]
+        public EventCallback<DateTime?> DateChanged { get; set; }
         private async Task GetDataAsync()
         {
             try
@@ -33,10 +35,15 @@ namespace EADCA3.Pages
             await GetDataAsync();
         }
 
-        private async Task OnValueChanged()
+        public async Task OnDateChanged(ChangeEventArgs e)
         {
+            var date = (string)e.Value;
+            var newDate = DateTime.Parse(date);
+            Date = newDate;
+            await DateChanged.InvokeAsync(Date);
             await GetDataAsync();
         }
+
 
     }
 }
