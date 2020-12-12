@@ -7,7 +7,6 @@
     @if (hostEnv.IsDevelopment())
     {
         <p>Error: @ErrorMessage </p>
-        <p>Have you set the parameters necessary in launchSettings.json?</p>
     }
     else
     {
@@ -50,20 +49,17 @@ else
         <tbody>
 
             @foreach (var match in Main.matches)
-            { 
-            <tr>
-                <td>@match.utcDate.TimeOfDay</td>
-                <td>@match.status</td>
-                <td>@match.homeTeam.name </td>
-                <td>@match.score.fullTime.homeTeam - @match.score.fullTime.awayTeam</td>
-                <td>@match.awayTeam.name</td>
-            </tr>
-                }
+            {
+                <tr>
+                    <td>@match.utcDate.TimeOfDay</td>
+                    <td>@match.status</td>
+                    <td>@match.homeTeam.name </td>
+                    <td>@match.score.fullTime.homeTeam - @match.score.fullTime.awayTeam</td>
+                    <td>@match.awayTeam.name</td>
+                </tr>
             }
-
-
         </tbody>
     </table>
 
 }
-}
+
