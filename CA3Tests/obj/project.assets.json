@@ -7899,23 +7899,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ryan3\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\taschenrechner\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\eadca3v4\\EADCA3\\CA3Tests\\CA3Tests.csproj",
+      "projectUniqueName": "C:\\Users\\taschenrechner\\Desktop\\EADCA3\\CA3Tests\\CA3Tests.csproj",
       "projectName": "CA3Tests",
-      "projectPath": "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\eadca3v4\\EADCA3\\CA3Tests\\CA3Tests.csproj",
-      "packagesPath": "C:\\Users\\Ryan3\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\eadca3v4\\EADCA3\\CA3Tests\\obj\\",
+      "projectPath": "C:\\Users\\taschenrechner\\Desktop\\EADCA3\\CA3Tests\\CA3Tests.csproj",
+      "packagesPath": "C:\\Users\\taschenrechner\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\taschenrechner\\Desktop\\EADCA3\\CA3Tests\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Ryan3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\taschenrechner\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7929,8 +7925,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\eadca3v4\\EADCA3\\EADCA3\\EADCA3.csproj": {
-              "projectPath": "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\eadca3v4\\EADCA3\\EADCA3\\EADCA3.csproj"
+            "C:\\Users\\taschenrechner\\Desktop\\EADCA3\\EADCA3\\EADCA3.csproj": {
+              "projectPath": "C:\\Users\\taschenrechner\\Desktop\\EADCA3\\EADCA3\\EADCA3.csproj"
             }
           }
         }
@@ -8002,7 +7998,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

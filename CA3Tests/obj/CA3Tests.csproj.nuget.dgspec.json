@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\eadca3v4\\EADCA3\\CA3Tests\\CA3Tests.csproj": {}
+    "C:\\Users\\taschenrechner\\Desktop\\EADCA3\\CA3Tests\\CA3Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\eadca3v4\\EADCA3\\CA3Tests\\CA3Tests.csproj": {
+    "C:\\Users\\taschenrechner\\Desktop\\EADCA3\\CA3Tests\\CA3Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\eadca3v4\\EADCA3\\CA3Tests\\CA3Tests.csproj",
+        "projectUniqueName": "C:\\Users\\taschenrechner\\Desktop\\EADCA3\\CA3Tests\\CA3Tests.csproj",
         "projectName": "CA3Tests",
-        "projectPath": "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\eadca3v4\\EADCA3\\CA3Tests\\CA3Tests.csproj",
-        "packagesPath": "C:\\Users\\Ryan3\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\eadca3v4\\EADCA3\\CA3Tests\\obj\\",
+        "projectPath": "C:\\Users\\taschenrechner\\Desktop\\EADCA3\\CA3Tests\\CA3Tests.csproj",
+        "packagesPath": "C:\\Users\\taschenrechner\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\taschenrechner\\Desktop\\EADCA3\\CA3Tests\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Ryan3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\taschenrechner\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -31,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\eadca3v4\\EADCA3\\EADCA3\\EADCA3.csproj": {
-                "projectPath": "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\eadca3v4\\EADCA3\\EADCA3\\EADCA3.csproj"
+              "C:\\Users\\taschenrechner\\Desktop\\EADCA3\\EADCA3\\EADCA3.csproj": {
+                "projectPath": "C:\\Users\\taschenrechner\\Desktop\\EADCA3\\EADCA3\\EADCA3.csproj"
               }
             }
           }
@@ -104,24 +101,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\eadca3v4\\EADCA3\\EADCA3\\EADCA3.csproj": {
+    "C:\\Users\\taschenrechner\\Desktop\\EADCA3\\EADCA3\\EADCA3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\eadca3v4\\EADCA3\\EADCA3\\EADCA3.csproj",
+        "projectUniqueName": "C:\\Users\\taschenrechner\\Desktop\\EADCA3\\EADCA3\\EADCA3.csproj",
         "projectName": "EADCA3",
-        "projectPath": "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\eadca3v4\\EADCA3\\EADCA3\\EADCA3.csproj",
-        "packagesPath": "C:\\Users\\Ryan3\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ryan3\\OneDrive - Technological University Dublin\\EADCA3v2\\eadca3v4\\EADCA3\\EADCA3\\obj\\",
+        "projectPath": "C:\\Users\\taschenrechner\\Desktop\\EADCA3\\EADCA3\\EADCA3.csproj",
+        "packagesPath": "C:\\Users\\taschenrechner\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\taschenrechner\\Desktop\\EADCA3\\EADCA3\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Ryan3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\taschenrechner\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -174,7 +168,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.browser-wasm",
-              "version": "[5.0.0, 5.0.0]"
+              "version": "[5.0.1, 5.0.1]"
             }
           ],
           "frameworkReferences": {
@@ -182,7 +176,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

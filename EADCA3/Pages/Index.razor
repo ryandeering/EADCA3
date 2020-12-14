@@ -1,21 +1,12 @@
 ﻿@page "/"
 @inject HttpClient Http
-@inject IWebAssemblyHostEnvironment hostEnv
 
 
 @if (Main == null)
 {
 
-    @if (hostEnv.IsDevelopment())
-    {
-        <p>Error: @ErrorMessage </p>
-        <p>Have you set the parameters necessary in launchSettings.json?</p>
-    }
-    else
-    {
         <p>Calling the API has run into a problem.</p>
         <p>A reminder that the API can only make 10 requests per minute.</p>
-    }
 
 }
 else

@@ -1,19 +1,10 @@
 ﻿@page "/matchestoday"
 @inject HttpClient Http
-@inject IWebAssemblyHostEnvironment hostEnv
 
 @if (Main == null)
 {
-    @if (hostEnv.IsDevelopment())
-    {
-        <p>Error: @ErrorMessage </p>
-    }
-    else
-    {
         <p>Calling the API has run into a problem.</p>
         <p>A reminder that the API can only make 10 requests per minute.</p>
-    }
-
 }
 else
 {
@@ -35,30 +26,41 @@ else
                format-value="@dateFormatString" @onchange="OnDateChanged" />
     </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Time</th>
-                <th>Status</th>
-                <th>Home</th>
-                <th>Score</th>
-                <th>Away</th>
-            </tr>
-        </thead>
-        <tbody>
 
-            @foreach (var match in Main.matches)
-            {
+
+    if (Main.matches.Count == 0)
+    {
+        <p> No matches found for this date. </p>
+    }
+    else
+    {
+
+
+
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>@match.utcDate.TimeOfDay</td>
-                    <td>@match.status</td>
-                    <td>@match.homeTeam.name </td>
-                    <td>@match.score.fullTime.homeTeam - @match.score.fullTime.awayTeam</td>
-                    <td>@match.awayTeam.name</td>
+                    <th>Time</th>
+                    <th>Status</th>
+                    <th>Home</th>
+                    <th>Score</th>
+                    <th>Away</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
 
+                @foreach (var match in Main.matches)
+                {
+                    <tr>
+                        <td>@match.utcDate.TimeOfDay</td>
+                        <td>@match.status</td>
+                        <td>@match.homeTeam.name </td>
+                        <td>@match.score.fullTime.homeTeam - @match.score.fullTime.awayTeam</td>
+                        <td>@match.awayTeam.name</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
 }
 
