@@ -1,7 +1,7 @@
 
 # Enterprise Application Development: Continous Assessment 3
 
-Check it out at: http://eadca3-1-dev-as.azurewebsites.net/
+Check it out at: https://brave-flower-07f387c03.azurestaticapps.net
 
 ### What is it?
 This CA was a single page application using .NET 5 Blazor WebAssembly, and Bunit and Xunit for unit tests.
